@@ -9,6 +9,9 @@ import "./styles.css";
 //create a new instance of QueryClient
 const client = new QueryClient();
 const getData = async () => {
+  await new Promise((r) => {
+    setTimeout(r, 5000);
+  });
   const res = await axios("https://api.github.com/users/DarshanchGIT");
   // console.log(res.data.name);
   return res.data.name;
